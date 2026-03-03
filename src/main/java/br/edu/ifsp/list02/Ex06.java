@@ -18,16 +18,47 @@ package br.edu.ifsp.list02;
 
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
  */
+import java.util.Scanner;
+
 public class Ex06 {
+
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+
+        // Leia o input
+        Scanner scanner = new Scanner(System.in);
+        int N = scanner.nextInt();
+
+        int[] arrayA = new int[N];
+        int[] arrayB = new int[N];
+
+        for (int i = 0; i < N; i++) {
+            arrayA[i] = scanner.nextInt();
+        }
+
+        for (int i = 0; i < N; i++) {
+            arrayB[i] = scanner.nextInt();
+        }
+
+        Ex06 ex = new Ex06();
+        System.out.println(ex.compute(arrayA, arrayB));
     }
 
     String compute(int[] arrayA, int[] arrayB) {
-        String output = null;
-        //put your logic here
+
+        String output = "";
+
+        int tamanho = arrayA.length;
+
+        for (int i = 0; i < tamanho; i++) {
+
+            output += arrayA[i] + " ";
+            output += arrayB[i];
+
+            if (i < tamanho - 1) {
+                output += " ";
+            }
+        }
+
         return output;
     }
 }
