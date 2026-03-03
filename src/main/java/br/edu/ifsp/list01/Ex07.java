@@ -18,6 +18,8 @@ package br.edu.ifsp.list01;
     1.25
     150
 */
+import java.util.Scanner;
+
 public class Ex07 {
 
     public static void main(String[] args) {
