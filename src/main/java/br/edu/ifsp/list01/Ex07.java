@@ -21,14 +21,28 @@ package br.edu.ifsp.list01;
 public class Ex07 {
 
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+        Scanner scanner = new Scanner(System.in);
+
+        int x = scanner.nextInt();
+        double v1 = scanner.nextDouble();
+        double v2 = scanner.nextDouble(); 
+        double a = scanner.nextDouble(); 
+
+        Ex07 ex = new Ex07();
+
+        double resultado = ex.compute(x, v1, v2, a); 
+        System.out.printf("%.2f\n", resultado);
+        
     }
 
     double compute(int x, double v1, double v2, double a) {
         double output = -0.1;
-        //put your logic here
+        if (a <= x) {
+            output = a * v1;
+        }
+        else {
+            output = a * v2;
+        }
         return output;
     }
 }
