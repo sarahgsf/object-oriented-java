@@ -26,14 +26,25 @@ package br.edu.ifsp.list01;
 */
 public class Ex10 {
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+        Scanner scanner = new Scanner(System.in);
+
+        int x1 = scanner.nextInt();
+        int v1 = scanner.nextInt();
+        int x2 = scanner.nextInt();
+        int v2 = scanner.nextInt();
+
+        Ex10 ex = new Ex10();
+
+        System.out.println(ex.compute(x1, v1, x2, v2));
     }
 
     String compute(int x1, int v1, int x2, int v2) {
         String output = null;
-        //put your logic here
+        if (v1 != v2 && (x2 - x1) % (v1 - v2) == 0 && (x2 - x1) / (v1 - v2) >= 0) {
+            output = "SIM";
+        } else {
+            output = "NAO";
+        }
         return output;
     }
 }
