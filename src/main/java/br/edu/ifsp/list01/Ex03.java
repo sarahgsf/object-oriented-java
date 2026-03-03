@@ -14,6 +14,8 @@ package br.edu.ifsp.list01;
     Exemplo 4: Entrada = 2016 | Saída = Ano bissexto
     Exemplo 5: Entrada = 0 | Saída = Erro
 */
+import java.util.Scanner;
+
 public class Ex03 {
 
     public static void main(String[] args) {
