@@ -39,16 +39,54 @@ package br.edu.ifsp.list02;
     Fonte: Adaptado de Olimpíada Brasileira de Informática (OBI)
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
  */
+
+import java.util.Scanner;
+
 public class Ex07 {
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+
+        Scanner scanner = new Scanner(System.in);
+
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+
+        int l1 = scanner.nextInt();
+        int h1 = scanner.nextInt();
+
+        int l2 = scanner.nextInt();
+        int h2 = scanner.nextInt();
+
+        Ex07 ex = new Ex07();
+
+        System.out.println(ex.compute(x, y, l1, h1, l2, h2));
     }
 
     String compute(int x, int y, int l1, int h1, int l2, int h2) {
-        String output = null;
-        //put your logic here
+
+        String output = "N";
+
+        int[][] f1 = { {l1, h1}, {h1, l1} };
+        int[][] f2 = { {l2, h2}, {h2, l2} };
+
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+
+                int w1 = f1[i][0];
+                int alt1 = f1[i][1];
+
+                int w2 = f2[j][0];
+                int alt2 = f2[j][1];
+
+                if (w1 + w2 <= x && Math.max(alt1, alt2) <= y) {
+                    output = "S";
+                }
+
+                if (alt1 + alt2 <= y && Math.max(w1, w2) <= x) {
+                    output = "S";
+                }
+            }
+        }
+
         return output;
     }
 }
