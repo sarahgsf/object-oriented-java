@@ -22,14 +22,30 @@ package br.edu.ifsp.list01;
 public class Ex08 {
 
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int c = scanner.nextInt();
+
+        Ex08 ex = new Ex08();
+
+        System.out.println(ex.compute(n,c)); 
+        
     }
 
     int compute(int n, int c) {
         int output = -1;
-        //put your logic here
+        int precoAtual = c;
+        output = 0;
+
+         for(int i = 0; i < n; i++) {
+             output = output + precoAtual;
+
+             if (precoAtual > 1) {
+                 precoAtual --;
+             }
+         }
+    
         return output;
     }
 }
