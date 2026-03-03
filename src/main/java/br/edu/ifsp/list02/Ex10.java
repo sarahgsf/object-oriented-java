@@ -28,16 +28,46 @@ package br.edu.ifsp.list02;
 
     Qualquer valor fora do domínio de entrada tem como saída esperada a String "Erro".
  */
+import java.util.Scanner;
+
 public class Ex10 {
+
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+
+        Scanner scanner = new Scanner(System.in);
+
+        int x1 = scanner.nextInt();
+        int y1 = scanner.nextInt();
+        int a = scanner.nextInt();
+        int f = scanner.nextInt();
+        int d = scanner.nextInt();
+
+        Ex10 ex = new Ex10();
+        System.out.println(ex.compute(x1, y1, a, f, d));
     }
 
     String compute(int x, int y, int a, int f, int d) {
+
         String output = null;
-        //put your logic here
+
+        if (f < 0 || f > 180 || d < 0 || d > 8) {
+            output = "Erro";
+        } else {
+
+            int anguloRelativo = f - 90;
+            int anguloFinal = a + anguloRelativo;
+
+            double anguloRad = Math.toRadians(anguloFinal);
+
+            double novoX = x + d * Math.cos(anguloRad);
+            double novoY = y + d * Math.sin(anguloRad);
+
+            int x2 = (int) Math.round(novoX);
+            int y2 = (int) Math.round(novoY);
+
+            output = "(" + x2 + "," + y2 + ")";
+        }
+
         return output;
     }
 }
