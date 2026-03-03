@@ -19,6 +19,8 @@ package br.edu.ifsp.list01;
     Fonte: Adaptado de https://neps.academy/problem/193
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
 */
+import java.util.Scanner;
+
 public class Ex08 {
 
     public static void main(String[] args) {
