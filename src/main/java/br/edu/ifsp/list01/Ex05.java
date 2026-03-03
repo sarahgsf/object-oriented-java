@@ -20,17 +20,39 @@ package br.edu.ifsp.list01;
     10.00
     50
 */
+
+import java.util.Scanner;
+
 public class Ex05 {
 
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+
+        Scanner scanner = new Scanner(System.in);
+
+        int L = scanner.nextInt();
+        double m = scanner.nextDouble();
+        double a = scanner.nextDouble();
+        int v = scanner.nextInt();
+
+        Ex05 ex = new Ex05();
+
+        String resultado = ex.compute(L, m, a, v);
+
+        System.out.printf("%.2f\n", Double.parseDouble(resultado));
     }
 
     String compute(int L, double m, double a, int v) {
-        String output =  null;
-        //put your logic here
+
+        String output = null;
+
+        if (v <= L) {
+            output = "0.00";
+        } 
+        else {
+            double multa = m + (v - L) * a;
+            output = "" + multa;
+        }
+
         return output;
     }
 }
