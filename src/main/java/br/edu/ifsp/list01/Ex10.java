@@ -24,6 +24,8 @@ package br.edu.ifsp.list01;
 
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
 */
+import java.util.Scanner;
+
 public class Ex10 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
