@@ -18,14 +18,35 @@ package br.edu.ifsp.list01;
 public class Ex04 {
 
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+       Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int c = scanner.nextInt();
+        int m = scanner.nextInt();
+
+        Ex04 ex = new Ex04();
+
+        System.out.println(ex.compute(n, c, m));
     }
 
     int compute(int n, int c, int m) {
         int output =  -1;
-        //put your logic here
+        /if (n <= 0 || c <= 0 || m <= 0) {
+            output = -1;
+        } 
+        else {
+
+            int chocolates = n / c;
+            int embalagens = chocolates;
+
+            while (embalagens >= m) {
+
+                int bonus = embalagens / m;
+
+                chocolates = chocolates + bonus;
+
+                embalagens = bonus + (embalagens % m);
+            }
         return output;
     }
 }
