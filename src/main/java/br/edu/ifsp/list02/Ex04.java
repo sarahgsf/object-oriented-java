@@ -25,16 +25,44 @@ package br.edu.ifsp.list02;
 
     => Exercício gentilmente cedido pelos profs. Jorge Cutigi e Adenilso Simão (ICMC/USP)
  */
+import java.util.Scanner;
+
 public class Ex04 {
+
     public static void main(String[] args) {
-        //Leia o input
-        //Crie uma variável do tipo deste arquivo. Exemplo: Ex02 ex = new Ex02();
-        //Escreva o resultado da chamada do método compute() aqui
+
+        Scanner scanner = new Scanner(System.in);
+
+        int IA = scanner.nextInt();
+        int IB = scanner.nextInt();
+        int FA = scanner.nextInt();
+        int FB = scanner.nextInt();
+
+        Ex04 ex = new Ex04();
+
+        System.out.println(ex.compute(IA, IB, FA, FB));
     }
 
     int compute(int ia, int ib, int fa, int fb) {
+
         int output = -1;
-        //put your logic here
+
+        
+        if (ia == fa && ib == fb) {
+            output = 0;
+        }
+        
+        else if ((1 - ia) == fa && ib == fb) {
+            output = 1;
+        }
+       
+        else if ((1 - ia) == fa && (1 - ib) == fb) {
+            output = 1;
+        }
+        else if (ia == fa && (1 - ib) == fb) {
+            output = 2;
+        }
+
         return output;
     }
 }
