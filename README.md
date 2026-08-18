@@ -12,12 +12,6 @@ O objetivo deste projeto é fortalecer habilidades básicas por meio da implemen
 - Implementação de métodos
 - Conceitos fundamentais de POO
 
-## 📁 Estrutura
-
-Os exercícios estão organizados em listas dentro do pacote:
-
-`src/main/java/br/edu/ifsp`
-
 Cada classe representa um exercício individual com sua respectiva implementação.
 
 ## Finalidade
